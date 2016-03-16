@@ -1,0 +1,77 @@
+body {
+  background-color: $thirdColor;
+  margin: 0;
+  font: 10pt $mainFont;
+  overflow-x: hidden;
+  line-height: 1.25;
+}
+
+::selection {
+  background: $dark-gray; /* WebKit/Blink Browsers */
+  color: $white;
+}
+::-moz-selection {
+  background: $dark-gray; /* Gecko Browsers */
+  color: $white;
+}
+
+a {
+  color: $red;
+
+  &:hover {
+    text-decoration: none;
+    color: $red;
+    border-bottom: 1px solid $mainColor;
+    padding-bottom: 1px;
+  }
+
+  &:visited, &:focus, &:active {
+    color: $red;
+    text-decoration: none;
+  }
+}
+
+
+h1, .entry-title { /* Title header */
+  @include header {
+    background-color: $mainColor;
+    padding: 20px 85px;
+    text-align: center;
+    display: table;
+  }
+
+  #services & { // used to be h3..
+    background-color:$mainColor;
+    padding: 20px 0px 20px 30px;
+    width: 90%;
+    text-align: left;
+    display: table;
+  }
+}
+
+h2 { /* sub header */
+  @include header {
+    color: $mainColor;
+    text-align: center;
+  }
+
+  .row &, .col-md-4 & {
+    text-align: left;
+  }
+}
+
+
+.script {
+  @extend %script;
+}
+
+h3 {
+  font: 12pt $titleFont;
+  color: $red;
+}
+
+/* body padding */
+
+#bcontent {
+  padding: 0 70px;
+}

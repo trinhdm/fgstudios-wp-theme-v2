@@ -1,0 +1,42 @@
+
+#headerBG.container-fluid, img#headerBG.container-fluid s{
+    width: 100%;
+    height: 250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0 0 35px 0;
+    overflow: auto;
+    position: static;
+}
+
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 410px; left: 0; bottom: 0; right: 0;
+}
+
+.title {
+  margin: -150px auto 0;
+  position: absolute;
+}
+
+/* photo/video services image fill */
+
+.fill {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    height: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    img {
+      flex-shrink:0;
+      min-width:100%;
+      min-height:100%;
+      object-fit: cover;
+    }
+}

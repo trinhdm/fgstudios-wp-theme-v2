@@ -1,0 +1,297 @@
+.fixed-bot {
+  position: absolute;
+  bottom: 0;
+}
+
+
+@media (max-width: 900px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+		margin-top: 7.5px;
+	}
+	.navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+  		display:block !important;
+	}
+}
+
+#fgnav, .menu {
+   clear:both;
+   float:left;
+   margin:0;
+  //  margin-top: -2px;
+   padding:0;
+   border-bottom: 1px solid #aaa; /* line below menu */
+   width:100%;
+   font-family: JosefinBold, Verdana, sans-serif; /* Menu font */
+   font-size:90%; /* Menu text size */
+   z-index:1000; /* This makes the dropdown menus appear above the page content below */
+  //  position:relative;        // uncomment this is you want to remove the sticky header
+   background-color: #fff;
+}
+
+.navbar, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border: 0px solid transparent;
+}
+
+.navbar {
+  border-radius: 0px;
+}
+
+#fgnav:focus, #fgnav ul:focus, #fgnav ul li:focus, #fgnav ul li a:focus,
+.menu:focus, .menu ul:focus, .menu ul li:focus, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover  {
+  background-color: rgba(0,0,0,0) !important;
+}
+
+#fgnav ul ul:focus, #fgnav ul ul a:focus, #fgnav ul ul li:focus, #fgnav ul ul li a:focus {
+  background-color: #ddd !important;
+}
+
+#fgnav ul li a, .menu ul li a, .menu a {
+   line-height: 20px !important;
+   display: block;
+   padding: 19px 27px;
+   margin: 0;
+   font: 8pt $titleFont;
+   text-decoration: none;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   color: $black;
+   border-bottom: 0px solid transparent; // gets rid of a:hover border bottom
+
+   @media (min-width: 835px) and (max-width: 900px) {
+     padding: 19px 20px;
+   }
+
+   @media (min-width: 768px) and (max-width: 834px) {
+     padding: 19px 10px;
+   }
+}
+
+#fgnav ul li a:hover, .menu ul li a:hover, .menu a:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#fgnav ul li.active a, .menu ul li.active a {
+   color: #fff;
+   background: $black;
+   border-bottom: 1px solid #aaa;
+   height:59px;
+}
+
+.current-menu-parent { /*makes parent link active when child is selected */
+  background-color: $black;
+  border-bottom: 1px solid #aaa;
+}
+.current-menu-parent > a {
+  color: #ffffff !important;
+  height:58px;
+}
+
+.navbar .nav > li > .dropdown-menu:before,
+.navbar .nav > li > .dropdown-menu:after, .caret {
+    display:none; /* removes dropdown caret */
+}
+
+#fgnav ul ul li a:hover,
+#fgnav ul li.active ul li a:hover,
+#fgnav ul li:hover ul li a:hover,
+#fgnav ul li.hover ul li a:hover,
+.menu ul ul li a:hover,
+.menu ul li.active ul li a:hover,
+.menu ul li:hover ul li a:hover,
+.menu ul li.hover ul li a:hover { /* This line is required for IE 6 and below */
+   -webkit-transition: color 0.5s ease-out;
+   -moz-transition: color 0.5s ease-out;
+   -ms-transition: color 0.5s ease-out;
+   -o-transition: color 0.5s ease-out;
+   transition: color 0.5s ease-out;
+   color: $red;
+}
+
+.navbar-collapse.in, .navbar-collapse.collapsing { /* prevents scrollbar from appearing */
+    overflow-y: visible;
+}
+
+@media screen and (min-width: 770px) {
+  // #fgnav, .menu {
+  //   width:110%;
+  //   right: 5%; /* hack to expand border bottom all the way bc it won't otherwise */
+  // }            // uncomment this out to remove fixed nav
+
+  #fgnav ul, .menu ul {
+     margin:0;
+     padding:0;
+     list-style:none;
+     float:right;
+     position:relative;
+     right:50%;
+  }
+
+  #fgnav ul li, .menu ul li {
+    margin:0 0 0 1px;
+    padding:0;
+    position:relative;
+    left:50%;
+    top:1px;
+  }
+
+  #fgnav ul ul, .menu ul ul {
+     display:none; /* Sub menus are hidden by default */
+     position:absolute;
+     top: 57px; /*aligns child under parent*/
+     left:0;
+     right:auto; /*resets the right:50% on the parent ul */
+     width: 20em; /* width of the drop-down menus */
+     border-radius: 0px !important;
+  }
+
+
+  #fgnav ul ul li, .menu ul ul li {
+     left:auto;  /*resets the left:50% on the parent li */
+     margin:0; /* Reset the 1px margin from the top menu */
+     clear:left;
+     width:100%;
+  }
+
+  /* Flip the last submenu so it stays within the page */
+  #fgnav ul ul.last, menu ul ul.last {
+     left:auto; /* reset left:0; value */
+     right:0; /* Set right value instead */
+  }
+
+
+  /* Make the sub menus appear on hover */
+  #fgnav ul li:hover ul,
+  #fgnav ul li.hover ul, .menu ul li:hover ul, .menu ul li.hover ul { /* This line is required for IE 6 and below */
+     display:block; /* Show the sub menus */
+     z-index: 2000;
+     margin: 1px; /* aligns submenu with border bottom */
+  }
+
+  #fgnav ul ul li a,
+  #fgnav ul li.active li a,
+  #fgnav ul li:hover ul li a,
+  #fgnav ul li.hover ul li a,
+  .menu ul ul li a,
+  .menu ul li.active li a,
+  .menu ul li:hover ul li a,
+  .menu ul li.hover ul li a  { /* This line is required for IE 6 and below */
+     font-size:.8em;
+     font-weight:normal; /* resets the bold set for the top level menu items */
+     background:#ddd;
+     color:#444;
+     line-height: 1em !important; /* overwrite line-height value from top menu */
+     border-bottom: 1px solid #ccc !important; /* sub menu item horizontal lines */
+     height: 50px !important;
+  }
+
+  #fgnav p { display: none; }
+
+  /* for header.php */
+  a.dropdown-toggle { padding: 19px 30px !important; margin-top: 0px !important; }
+
+  /* for regular pages */
+  /* a.dropdown-toggle { padding: 0px 30px 19px 30px !important; margin-top: -1px !important; } */
+
+  .dropdown-menu {
+    border: 0px solid #eee;
+    background-color: #aaa;
+  }
+
+  #fgnav li { /* displays wordpress nav horizontally */
+    display: inline-block;
+  }
+
+  #fgnav li a:after, .menu li a:after {
+  	content: '';
+  	display: block;
+  	margin: auto;
+  	height: 1.5px;
+  	width: 0px;
+  	background: transparent;
+  	transition: width .5s ease, background-color .5s ease;
+  }
+
+  #fgnav li a:hover:after, .menu li a:hover:after {
+  	width: 100%;
+  	background: #000;
+  }
+
+  /* Submenu items */
+  #fgnav ul ul a:hover:after, .menu ul ul a:hover:after {
+  	width: 100%;
+  	background: transparent;
+  }
+
+  #fgnav ul ul, .menu ul ul {
+     display:none; /* Sub menus are hidden by default */
+     position:absolute;
+     top: 57px; /*aligns child under parent*/
+     left:0;
+     right:auto; /*resets the right:50% on the parent ul */
+     width: 20em; /* width of the drop-down menus */
+     border-radius: 0px !important;
+     border: 0px #fff solid !important;
+  }
+
+  #fgnav ul ul li, .menu ul ul li {
+     left:auto;  /*resets the left:50% on the parent li */
+     margin:0; /* Reset the 1px margin from the top menu */
+     clear:left;
+     width:100%;
+  }
+}
+
+
+@media screen and (max-width: 769px) { /*for non desktop devices */
+  #fgnav, .menu {
+    width:100%;
+    right: 0%; /* hack to expand border bottom all the way bc it won't otherwise */
+  }
+
+  .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background-color: #ededed;
+  }
+
+  #fgnav ul ul li a,
+  #fgnav ul li.active li a,
+  #fgnav ul li:hover ul li a,
+  #fgnav ul li.hover ul li a,
+  .menu ul ul li a,
+  .menu ul li.active li a,
+  .menu ul li:hover ul li a,
+  .menu ul li.hover ul li a { /* This line is required for IE 6 and below */
+     font-size:.8em;
+     font-weight:normal; /* resets the bold set for the top level menu items */
+     background:#fff;
+     color:#000;
+     border-bottom: 0px solid #ccc;
+   }
+}
