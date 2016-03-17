@@ -48,7 +48,7 @@
 
 <?php
    $path = $_SERVER['DOCUMENT_ROOT'];
-   $path .= "/wp-content/themes/fgdemo/inc/contact-us-form.php";
+   $path .= "/wp-content/themes/fgdemo/assets/php/contact-us-form.php";
    include_once($path);
 ?>
 

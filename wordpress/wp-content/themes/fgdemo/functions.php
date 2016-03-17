@@ -196,6 +196,9 @@ add_action( 'wp_enqueue_scripts', 'wpt_register_css' );
 
 
 // registers custom nav menu
+$bspath = $_SERVER['DOCUMENT_ROOT'];
+$bspath .= "/wp-content/themes/fgdemo/assets/php/wp_bootstrap_navwalker.php";
+
 add_action( 'after_setup_theme', 'wpt_setup' );
     if ( ! function_exists( 'wpt_setup' ) ):
         function wpt_setup() {
@@ -203,7 +206,7 @@ add_action( 'after_setup_theme', 'wpt_setup' );
         } endif;
 
 // enables bootstrap navwalker
- require_once('wp_bootstrap_navwalker.php');
+ require_once($bspath);
 
  // enqueues our external font awesome stylesheet
  function enqueue_our_required_stylesheets(){
