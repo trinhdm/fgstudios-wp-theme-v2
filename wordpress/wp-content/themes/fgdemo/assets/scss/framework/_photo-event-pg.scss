@@ -1,15 +1,14 @@
 #photo-event {
-
   &.container {
     padding-top: 100px;
   }
 
   h1, .entry-title {
-    padding: 10px 0px 10px 20px;
-    width: 100%;
     font-family: $titleFont;
     text-align: left;
     display: table;
+    padding: 10px 0px 10px 20px;
+    width: 100%;
   }
 
   h2 {
@@ -20,7 +19,6 @@
     padding-bottom: 10px;
   }
 
-
   #mainImage {
     max-height: 500px;
     max-width: 800px;
@@ -29,95 +27,64 @@
   #hold {
     height: 500px;
     // width: 800px;
-    position:relative;
     z-index:1;
-    text-align:center; /* centers image */
-    overflow:hidden;
+    position: relative;
+    text-align: center;   /* centers image */
+    overflow: hidden;
   }
 
-  #thumbnails { /* thumbnails width = thumbGallery width + (thumbnailArrows width)*2 */
+  #thumbnails {     /* thumbnails width = thumbGallery width + (thumbnailArrows width)*2 */
     width: 770px;
     height: 100px;
     margin: 20px auto;
   }
 
   #thumbGallery {
-    width: 715px;
-    height: 120px;
     overflow: hidden;
     float: left;
     position: relative;
     text-align: center;
+    width: 715px;
+    height: 120px;
   }
 
   #imageContain { /* width is dynamically set by js */
-    height: 110px;
     position: absolute;
+    height: 110px;
     top:0px;
     left:0px;
   }
 
   #imageContain img {
+    float: left;
     width: 100px;
     height: 100px;
-    float: left;
   }
 
   #imageContain img:first-child {
     margin-left: 25px;
   }
 
-  #thumbnails .thumbnailArrows {
-    width: 25px;
-    float: left;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  #thumbnails .thumbnailArrows img {
-    width: 20px;
-    height: auto;
-  }
-
-  #thumbnails .thumbnailArrows:hover {
-    cursor:pointer;
-  }
-
-  .borderNormal {
-    border: 1px solid #ddd;
-  }
-
-  .selected {
-    border: 1px solid #000;
-  }
-
-  .header-content {
-      position: absolute;
+  #thumbnails {
+    &:hover {
+      cursor: pointer;
+    }
+    
+    .thumbnailArrows {
+      float: left;
+      position: relative;
+      width: 25px;
       top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
       transform: translateY(-50%);
-      width: 100%;
-  }
 
-  .header-content .contain {
-      margin: 0 auto;
-      width: 1200px;
-      display: flex;
-  }
+      &:hover {
+        cursor: pointer;
+      }
 
-  .header-content .contain .left {
-    width: 40%;
-    margin-right: 50px;
-    overflow: hidden;
-  }
-
-  .header-content .contain .right {
-    flex: 1;
-  }
-
-  .header-content .contain .clear {
-    clear: both;
+      img {
+        height: auto;
+        width: 20px;
+      }
+    }
   }
 }

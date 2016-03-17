@@ -2,6 +2,11 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
 
+@font-face {
+  font-family: Futurist;
+  src: url("./assets/fonts/FUTRFW.TTF");
+}
+
 
 /* DEFAULT COLORS / FONTS
 ============================================= */
@@ -52,6 +57,16 @@ $titleFont: 'Roboto', Verdana, sans-serif;
   font: 14pt $titleFont;
   letter-spacing: 2px;
   @content;
+}
+
+@mixin entry-title {
+  position: absolute;
+  margin-top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  background-color: transparent;
+  font-size: 20pt;
 }
 
 

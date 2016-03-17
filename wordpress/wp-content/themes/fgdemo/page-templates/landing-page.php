@@ -12,72 +12,70 @@
      }
 
      @font-face {
-  font-family: BebasNeue;
-  src: url("fonts/BebasNeue Regular.ttf");
-}
+       font-family: BebasNeue;
+       src: url("fonts/BebasNeue Regular.ttf");
+     }
 
-.entry-title, .site-header, .skip-link, .screen-reader-text, .widget-area, .site-info {
-display: none;
-}
+     .entry-title, .site-header, .skip-link, .screen-reader-text, .widget-area, .site-info {
+       display: none;
+     }
 
-body#background {
-  background: linear-gradient(
-      rgba(0,0,0,.4),
-      rgba(0,0,0,.4)
-    ),
-  url('http://www.foregroundstudios.net/wp-content/uploads/2016/02/Chris-Lee-HK_causewaybay.jpg') no-repeat 50% 50% fixed;
-  background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-}
+     body#background {
+       background: linear-gradient(
+         rgba(0,0,0,.4),
+         rgba(0,0,0,.4)
+         ),
+         url('http://www.foregroundstudios.net/wp-content/uploads/2016/02/Chris-Lee-HK_causewaybay.jpg') no-repeat 50% 50% fixed;
+       background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       -webkit-background-size: cover;
+     }
 
-body {
-  color: #fff;
-  font-family: Helvetica;
-  overflow: hidden;
-  margin-top: -10px;
-  margin-bottom: -10px;
-}
+     body {
+       color: #fff;
+       font-family: Helvetica;
+       overflow: hidden;
+       margin-top: -10px;
+       margin-bottom: -10px;
+     }
 
+     img {
+       width: 45%;
+       height: 45%;
+     }
 
-img {
-width: 45%;
-height: 45%;
-}
+     h1 {
+       font-family: 'Oswald', sans-serif;
+       text-transform: uppercase;
+       font-size: 40pt;
+     }
 
-h1 {
-  font-family: 'Oswald', sans-serif;
-  text-transform: uppercase;
-  font-size: 40pt;
-}
+     /* navbar styling*/
 
+     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+       border: 0px solid #fff;
+       box-shadow: inset 0 1px 0 rgba(255,255,255,0);
+     }
 
-/* navbar styling*/
+     @media screen and (max-width: 769px) {
+       .nav>li {
+         padding-left: 50px;
+       }
+     }
 
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  border: 0px solid #fff;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0);
-}
-
-@media screen and (max-width: 769px) {
-  .nav>li {
-    padding-left: 50px;
-  }
-}
-
-#navigation {
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid rgba(0, 0, 0, 0);
-  margin-right: 50px;
-  padding-top: 20px;
-}
+     #navigation {
+       background-color: rgba(0, 0, 0, 0);
+       border: 1px solid rgba(0, 0, 0, 0);
+       margin-right: 50px;
+       padding-top: 20px;
+     }
 
 
-.navbar-default .navbar-toggle {
-height: 40px;
-width: 40px;
-}
+     .navbar-default .navbar-toggle {
+       height: 40px;
+       width: 40px;
+     }
 
 .nav>li>a {
 display: inline-block;

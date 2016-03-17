@@ -1,13 +1,16 @@
 #aboutus {
+  .entry-title {
+    @include entry-title;
+  }
+
   .row {
     width: 100%;
     margin: 0 auto;
-    padding-bottom: 30px;
 
     @include desktop-and-under {
+      width: 95%;
       padding-bottom: 0;
       margin-bottom: 30px;
-      width: 95%;
 
       .col-sm-6, .col-sm-6 {
         padding: 0;
@@ -15,91 +18,87 @@
     }
 
     img {
-      width: 150px;
-      height: 150px;
       object-fit: cover; // in case the image doesn't fit the dimensions = no ugly resizing
       text-align: center;
+      width: 150px;
+      height: 150px;
 
       @include desktop-and-under {
         margin-top: 10px
       }
     }
   }
-}
 
-.about-info {
-  height: 180px;
-  background-color: #e1e1e1;
-  padding: 15px;
-  margin: 15px 0;
-
-  &:hover {
-    background-color: #d1d1d1;
-  }
-
-  .col-md-4 {
-    padding: 0;
-  }
-
-  .col-md-8 {
-    padding: 0;
-  }
-
-  .about-staff {
-    height: 145px;
-    overflow: hidden;
-
-    @media (min-width: 1024px) and (max-width: 1200px) {
-      padding-left: 30px;
-    }
+  .about-info {
+    background-color: #e1e1e1;
+    height: 180px;
+    padding: 15px;
+    margin: 15px 0;
 
     @include desktop-and-under {
-      height: 205px;
+      height: 425px;
+
+      .col-sm-6, .col-xs-12 {
+        text-align: center;
+        padding-bottom: 15px;
+      }
+    }
+
+    p {
+      font: 70%/162% $mainFont;
+
+      @include desktop-and-under {
+        width: 75%;
+        margin: 0 auto;
+      }
+    }
+
+    h2 {
+      line-height: 5%;
+      margin-top: 16px;
+
+      @include desktop-and-under {
+        text-align: center;
+      }
+    }
+
+    h3 {
+      line-height: 35%;
+      padding-bottom: 5px;
+    }
+
+    &:hover {
+      background-color: #d1d1d1;
+    }
+
+    .col-md-4, .col-md-8 {
+      padding: 0;
+    }
+
+    .about-staff {
+      height: 145px;
+      overflow: hidden;
+
+      @media (min-width: 1024px) and (max-width: 1200px) {
+        padding-left: 30px;
+      }
+
+      @include desktop-and-under {
+        height: 205px;
+      }
     }
   }
 
-  @include desktop-and-under {
-    height: 425px;
+  // fontawesome for about
+  .about-fa {
+    float: left;
+    clear: both;
+    padding-right: 16px;
 
-    .col-sm-6, .col-xs-12 {
+    @include desktop-and-under {
+      float: none;
       text-align: center;
-      padding-bottom: 15px;
+      padding: 0;
     }
-  }
-
-  p {
-    font: 70%/162% $mainFont;
-
-    @include desktop-and-under {
-      width: 75%;
-      margin: 0 auto;
-    }
-  }
-
-  h2 {
-    line-height: 5%;
-    margin-top: 16px;
-
-    @include desktop-and-under {
-      text-align: center;
-    }
-  }
-
-  h3 {
-    line-height: 35%;
-    padding-bottom: 5px;
-  }
-}
-
-// fontawesome for about
-.about-fa {
-  float: left;
-  padding-right: 16px;
-  clear: both;
-
-  @include desktop-and-under {
-    float: none;
-    text-align: center;
-    padding: 0;
   }
 }

@@ -5,16 +5,19 @@
     get_header();
      ?>
 
-     <div class="container-fluid" id="headerBG" style="background-image: url('http://www.foregroundstudios.net/wp-content/uploads/2016/02/Chris-Lee-HK_causewaybay.jpg'); background-attachment: fixed;">
+     <div class="container-fluid" id="headerBG" style="background-image: url('http://www.foregroundstudios.net/wp-content/uploads/2016/03/CL_Ocean.jpg'); background-attachment: fixed;  background-position: 0 -270px">
      </div>
 
      <style type="text/css">
 
      .entry-title {
-        position: absolute;
-        margin-top: -65px;
+       position: absolute;
+       margin-top: -90px;
        left: 50%;
        transform: translateX(-50%);
+       padding: 0;
+       background-color: transparent;
+       font-size: 20pt;
      }
      </style>
 

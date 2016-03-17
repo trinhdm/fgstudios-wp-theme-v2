@@ -1,10 +1,12 @@
 <?php
 /**
-* Template Name: Event Portfolio (Photo) Page Template
+* Template Name: Photos Portfolio - Event Page
 */
     get_header();
      ?>
 
+
+     <!-- make a META BOX for this -->
      <!-- populates thumbnails for slider - figure out how to do it in php -->
      <script>
      var images = ['http://www.foregroundstudios.net/wp-content/uploads/2016/03/APO_Competition_CL_May10-WM-0147.jpg',
@@ -33,47 +35,49 @@
         <?php the_post_thumbnail(); ?>
       </header>
 
- <div class="container" id="photo-event">
 
+      <div class="container" id="photo-event">
 
-<div class="row">
-  <div class="col-md-12 text-center">
-   <div id="hold">
-     <img src="http://www.foregroundstudios.net/wp-content/uploads/2016/03/APO_Competition_CL_May10-WM-0147.jpg" id="mainImage"/>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div id="hold">
+              <img src="http://www.foregroundstudios.net/wp-content/uploads/2016/03/APO_Competition_CL_May10-WM-0147.jpg" id="mainImage"/>
+            </div>
 
+            <div id="thumbnails">
+              <div class="thumbnailArrows"><i class="fa fa-arrow-left fa-2x" id="leftArrow" /></i>
+              </div>
+              <div id="thumbGallery">
+                <div id="imageContain"></div>
+              </div>
+              <div class="thumbnailArrows"><i class="fa fa-arrow-right fa-2x" id="rightArrow" /></i>
+              </div>
+            </div>
 
-   </div>
-   <div id="thumbnails">
-       <div class="thumbnailArrows"><i class="fa fa-arrow-left fa-2x" id="leftArrow" /></i>
-       </div>
-       <div id="thumbGallery">
-           <div id="imageContain"></div>
-       </div>
-       <div class="thumbnailArrows"><i class="fa fa-arrow-right fa-2x" id="rightArrow" /></i>
-       </div>
-   </div>
+          </div>
+        </div>
 
- </div></div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-1 col-sm-5 col-xs-12">
+            <h2>Event Details</h2>
+            <!-- make a META BOX for this -->
+            <p>Bacon ipsum dolor amet esse lorem turducken jerky, culpa dolore ribeye. Mollit aute ut tail porchetta short loin. Do swine short ribs pork loin ball tip capicola pig aliqua excepteur occaecat cillum tenderloin consectetur pork chop quis. Sunt veniam consequat swine ham hock duis bacon.</p>
+          </div>
 
-<div class="row">
-   <div class="col-md-4 col-md-offset-1 col-sm-5 col-xs-12">
-     <h2>Event Details</h2>
-     <p>Bacon ipsum dolor amet esse lorem turducken jerky, culpa dolore ribeye. Mollit aute ut tail porchetta short loin. Do swine short ribs pork loin ball tip capicola pig aliqua excepteur occaecat cillum tenderloin consectetur pork chop quis. Sunt veniam consequat swine ham hock duis bacon.</p>
-   </div>
+          <div class="col-md-6 col-sm-7 col-xs-12">
+            <h1 class="entry-title"><?php the_title(); ?></h1>
+            <!-- make a META BOX for this -->
+            <p>Bacon ipsum dolor amet esse lorem turducken jerky, culpa dolore ribeye. Mollit aute ut tail porchetta short loin. Do swine short ribs pork loin ball tip capicola pig aliqua excepteur occaecat cillum tenderloin consectetur pork chop quis. Sunt veniam consequat swine ham hock duis bacon.</p>
+            <p>Et sausage tail dolore, veniam drumstick hamburger strip steak aliquip ham. Bresaola ipsum sint ribeye doner consequat capicola culpa. Quis tongue ball tip meatball tri-tip nostrud alcatra pariatur dolore culpa fatback ribeye turducken. T-bone meatball nostrud, qui cow in occaecat ipsum dolore rump nulla duis kielbasa shoulder sint. Elit t-bone non corned beef landjaeger, aliquip est pork loin deserunt chicken. Beef ribs eu nulla jerky occaecat deserunt shankle alcatra tenderloin proident frankfurter cupim aliqua. Chicken ribeye hamburger tail, laborum turkey ullamco aliquip.</p>
+            <?php the_content(); ?>
+          </div><!-- .entry-content -->
 
-   <div class="col-md-6 col-sm-7 col-xs-12">
-     <h1 class="entry-title"><?php the_title(); ?></h1>
-     <p>Bacon ipsum dolor amet esse lorem turducken jerky, culpa dolore ribeye. Mollit aute ut tail porchetta short loin. Do swine short ribs pork loin ball tip capicola pig aliqua excepteur occaecat cillum tenderloin consectetur pork chop quis. Sunt veniam consequat swine ham hock duis bacon.</p>
-   <p>Et sausage tail dolore, veniam drumstick hamburger strip steak aliquip ham. Bresaola ipsum sint ribeye doner consequat capicola culpa. Quis tongue ball tip meatball tri-tip nostrud alcatra pariatur dolore culpa fatback ribeye turducken. T-bone meatball nostrud, qui cow in occaecat ipsum dolore rump nulla duis kielbasa shoulder sint. Elit t-bone non corned beef landjaeger, aliquip est pork loin deserunt chicken. Beef ribs eu nulla jerky occaecat deserunt shankle alcatra tenderloin proident frankfurter cupim aliqua. Chicken ribeye hamburger tail, laborum turkey ullamco aliquip.</p>
-     <?php the_content(); ?>
-   </div><!-- .entry-content -->
+          <?php comments_template( '', true ); ?>
+        <?php endwhile; // end of the loop. ?>
 
-   <?php comments_template( '', true ); ?>
- <?php endwhile; // end of the loop. ?>
-
+      </div>
+    </div>
 		</main><!-- #main -->
-	</div>
-</div>
 <!-- #primary -->
 
 <?php

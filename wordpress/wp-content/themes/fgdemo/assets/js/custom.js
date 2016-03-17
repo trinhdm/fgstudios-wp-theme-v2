@@ -19,7 +19,7 @@ $(document).ready(function(){
   if($('#homepage-flag').length > 0) {
 
     var options = { videoId: 'RGaxriJ4Iko', start: 1 };
-    $('.fullscreen-bg').tubular(options);
+    $('.fullscreen-video').tubular(options);
 
     /*! modernizr 3.3.1 (Custom Build) | MIT *
      * http://modernizr.com/download/?-htmlimports-inlinesvg-json-objectfit-overflowscrolling-rgba-scrollsnappoints-svg-svgclippaths-svgfilters-printshiv-setclasses !*/

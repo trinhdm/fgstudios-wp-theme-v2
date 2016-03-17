@@ -1,12 +1,8 @@
 #services {
   h1, .entry-title {
-    background-color: #000;
     padding: 20px 0px 20px 30px;
     width: 100%;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 14pt;
-    font-family: 'Roboto', Verdana, sans-serif;
+    font-family: $titleFont;
     letter-spacing: 2px;
     text-align: left;
     display: table;
