@@ -5,8 +5,20 @@
     get_header();
      ?>
 
-     <div class="container-fluid" id="headerBG" style="background-image: url('http://www.foregroundstudios.net/wp-content/uploads/2016/03/CL_Ocean.jpg'); background-attachment: fixed;  background-position: 0 -270px">
-     </div>
+     <?php
+     add_image_size( 'headersize', 1920, 1333 );
+     $img = rwmb_meta('fgs_header-img', 'type=image&size=headersize');
+     $top = rwmb_meta('fgs_header-top');
+     $left = rwmb_meta('fgs_header-left');
+
+     foreach ( $img as $image )
+             {
+                 echo "<div class='container-fluid' id='headerBG' style='background-image: url({$image['url']}); background-attachment: fixed;  background-position: $left $top'></div>";
+             }
+      ?>
+
+     <!-- <div class="container-fluid" id="headerBG" style="background-image: url('http://www.foregroundstudios.net/wp-content/uploads/2016/03/CL_Ocean.jpg'); background-attachment: fixed;  background-position: 0 -270px">
+     </div> -->
 
      <style type="text/css">
 

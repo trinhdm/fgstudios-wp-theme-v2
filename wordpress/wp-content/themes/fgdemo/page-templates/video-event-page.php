@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Videos Portfolio - Event Page
+* Template Name: Event Page - Videos
 */
     get_header();
      ?>
@@ -20,24 +20,34 @@
 
         <div class="row">
           <div class="col-md-12 text-center">
-            <!-- make a META BOX for this -->
-            <iframe width="800" height="500" src="https://www.youtube.com/embed/RGaxriJ4Iko" frameborder="0" allowfullscreen></iframe>
+
+            <?php
+            function event_vid_size() {
+	             return array(
+                  'width' => 950,
+                  'height' => 820
+                );
+              }
+            add_filter( 'embed_defaults', 'event_vid_size' );
+
+            $video = rwmb_meta('fgs_yt-events', 'type=oembed');
+            $url = get_post_meta( get_the_ID(), 'fgs_yt-events', true );
+                  echo "$video";
+             ?>
+
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-4 col-md-offset-1 col-sm-5 col-xs-12">
             <h2>Event Details</h2>
-            <!-- make a META BOX for this -->
-            <p>Bacon ipsum dolor amet esse lorem turducken jerky, culpa dolore ribeye. Mollit aute ut tail porchetta short loin. Do swine short ribs pork loin ball tip capicola pig aliqua excepteur occaecat cillum tenderloin consectetur pork chop quis. Sunt veniam consequat swine ham hock duis bacon.</p>
+            <?php echo rwmb_meta('fgs_events-deets'); ?>
           </div>
 
           <div class="col-md-6 col-sm-7 col-xs-12">
             <h1 class="entry-title"><?php the_title(); ?></h1>
             <!-- make a META BOX for this -->
-              <p>Bacon ipsum dolor amet esse lorem turducken jerky, culpa dolore ribeye. Mollit aute ut tail porchetta short loin. Do swine short ribs pork loin ball tip capicola pig aliqua excepteur occaecat cillum tenderloin consectetur pork chop quis. Sunt veniam consequat swine ham hock duis bacon.</p>
-              <p>Et sausage tail dolore, veniam drumstick hamburger strip steak aliquip ham. Bresaola ipsum sint ribeye doner consequat capicola culpa. Quis tongue ball tip meatball tri-tip nostrud alcatra pariatur dolore culpa fatback ribeye turducken. T-bone meatball nostrud, qui cow in occaecat ipsum dolore rump nulla duis kielbasa shoulder sint. Elit t-bone non corned beef landjaeger, aliquip est pork loin deserunt chicken. Beef ribs eu nulla jerky occaecat deserunt shankle alcatra tenderloin proident frankfurter cupim aliqua. Chicken ribeye hamburger tail, laborum turkey ullamco aliquip.</p>
-              <?php the_content(); ?>
+              <?php echo rwmb_meta('fgs_events-desc'); ?>
           </div><!-- .entry-content -->
 
           <?php comments_template( '', true ); ?>

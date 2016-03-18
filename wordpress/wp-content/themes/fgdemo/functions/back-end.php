@@ -1,4 +1,6 @@
 <?php
+
+
 // increases php memory allowance for larger images
 @ini_set( 'upload_max_size' , '64M' );
 @ini_set( 'post_max_size', '64M');

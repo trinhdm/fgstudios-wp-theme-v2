@@ -23,7 +23,6 @@
                     }
              ?>
 
-            <!-- <img src="http://www.foregroundstudios.net/wp-content/uploads/2016/03/CL_Wild2.jpg" style="position: relative; top: 30%; right: 50%;"> -->
           </div>
 
           <div class="col-md-6 col-xs-12">

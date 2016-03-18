@@ -1,4 +1,4 @@
-var images = [];
+// var images = [];
 
 var position = 0;
 
