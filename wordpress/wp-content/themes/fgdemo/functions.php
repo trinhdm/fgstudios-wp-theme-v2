@@ -116,6 +116,69 @@ add_action( 'widgets_init', 'fgdemo_widgets_init' );
 ============================================= */
 
 
+// custom meta boxes
+add_filter( 'rwmb_meta_boxes', 'fgs_register_meta_boxes' );
+function fgs_register_meta_boxes( $meta_boxes ) {
+
+		$prefix = 'fgs_';
+
+    $meta_boxes[] = array(
+        'title'      => __( 'Change Header Image', 'textdomain' ),
+				'id'				 => 'header',
+				'context'    => 'side',
+        'post_types' => 'page',
+				'autosave'   => true,
+        'fields'     => array(
+						array(
+							'name' => __( '<p>Image Upload</p>', 'fgs' ),
+							'id'   => "{$prefix}header-img",
+							'type' => 'image',
+							'max_file_uploads' => 1,
+							'desc'  => __( '<p>Image for the header for this page.</p>', 'fgs' ),
+						),
+        ),
+    );
+
+		$meta_boxes[] = array(
+        'title'      => __( 'Staff Bio', 'fgs' ),
+				'id'         => "{$prefix}about",
+        'post_types' => 'page',
+				'autosave'   => true,
+        'fields'     => array(
+            array(
+                'id'   => "{$prefix}staff-name",
+                'name' => __( 'Name', 'fgs' ),
+                'type' => 'text',
+            ),
+						array(
+                'id'   => "{$prefix}staff-position",
+                'name' => __( 'Position', 'fgs' ),
+                'type' => 'text',
+            ),
+            array(
+                'id'   => "{$prefix}staff-bio",
+                'name' => __( 'Biography', 'fgs' ),
+                'type' => 'textarea',
+            ),
+        ),
+    );
+    return $meta_boxes;
+}
+
+// 	function add_meta_box() {
+//     global $post;
+//     if(!empty($post)) {
+//         $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
+//
+// 				// check for a template type
+// 				if ($template_file == 'page-templates/about-page.php') {
+// 					add_meta_box('fgs_about', 'Staff Bio', 'fgs_register_meta_boxes', 'page', 'normal', 'high');
+// 				}
+//     }
+// }
+// add_action( 'add_meta_boxes', 'add_meta_box' );
+
+
 // adds custom fixed nav js
 function all_the_js() {
 	wp_register_script('custom-js', get_template_directory_uri() . '/assets/js/custom.js', 'jquery');

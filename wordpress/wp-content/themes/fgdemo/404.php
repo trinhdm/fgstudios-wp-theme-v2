@@ -12,12 +12,21 @@ get_header(); ?>
 <style type="text/css">
 
 .page-title {
-   position: absolute;
-   margin-top: -65px;
-left: 50%;
+  position: absolute;
+  margin-top: -90px;
+  left: 50%;
   transform: translateX(-50%);
+  padding: 0;
+  background-color: transparent;
+  font-size: 20pt;
 }
 </style>
+
+
+<div class="container-fluid" id="headerBG" style="background-image: url('http://www.foregroundstudios.net/wp-content/uploads/2016/03/CL_Landscape.jpg'); background-attachment: fixed;">
+</div>
+
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -26,11 +35,19 @@ left: 50%;
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'fgdemo' ); ?></h1>
 				</header><!-- .page-header -->
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'fgdemo' ); ?></p>
+        <!-- REDIRECTS 404 TO HOMEPAGE -->
+        <?php
+        header("HTTP/1.1 301 Moved Permanently");
+        header("Location: ".get_bloginfo('url'));
+        exit();
+        ?>
+
+
+				<div class="container text-center">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links in the navigation?', 'fgdemo' ); ?></p>
 
 					<?php
-						get_search_form();
+
 
 						the_widget( 'WP_Widget_Recent_Posts' );
 
