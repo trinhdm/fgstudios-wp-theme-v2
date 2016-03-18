@@ -11,8 +11,19 @@
       <div class="container" id="services">
         <div class="row" id="about">
           <div class="col-md-4 col-md-offset-1 col-xs-12 fill">
-            <!-- make a META BOX for this -->
-            <img src="http://www.foregroundstudios.net/wp-content/uploads/2016/03/CL_Wild2.jpg" style="position: relative; top: 30%; right: 50%;">
+
+            <?php
+            add_image_size( 'headersize', 1920, 1333 );
+            $img = rwmb_meta('fgs_services-img', 'type=image&size=headersize');
+
+            foreach ( $img as $image )
+                    {
+                        echo "<img src='{$image['url']}'>";
+
+                    }
+             ?>
+
+            <!-- <img src="http://www.foregroundstudios.net/wp-content/uploads/2016/03/CL_Wild2.jpg" style="position: relative; top: 30%; right: 50%;"> -->
           </div>
 
           <div class="col-md-6 col-xs-12">

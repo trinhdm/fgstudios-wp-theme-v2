@@ -124,7 +124,7 @@ function fgs_register_meta_boxes( $meta_boxes ) {
 
 		// change header image meta box
     $meta_boxes[] = array(
-        'title'      => __( 'Change Header Image', 'textdomain' ),
+        'title'      => __( 'Change Header Image', 'fgs' ),
 				'id'				 => 'header',
 				'context'    => 'side',
         'post_types' => 'page',
@@ -134,7 +134,7 @@ function fgs_register_meta_boxes( $meta_boxes ) {
 						array(
 							'name' => __( '<p>Image Upload</p>', 'fgs' ),
 							'id'   => "{$prefix}header-img",
-							'type' => 'image',
+							'type' => 'plupload_image',
 							'max_file_uploads' => 1,
 							'desc'  => __( '<p>Image for the header for this page.<br>It will not upload if image is bigger than <b>2MB</b>.</p>', 'fgs' ),
 						),
@@ -189,6 +189,26 @@ function fgs_register_meta_boxes( $meta_boxes ) {
             ),
         ),
     );
+
+
+		// change header image meta box
+    $meta_boxes[] = array(
+        'title'      => __( 'Services - Image', 'fgs' ),
+				'id'				 => 'services',
+        'post_types' => 'page',
+				'priority'   => 'high',
+				'autosave'   => true,
+        'fields'     => array(
+						array(
+							'name' => __( '<p>Image Upload</p>', 'fgs' ),
+							'id'   => "{$prefix}services-img",
+							'type' => 'plupload_image',
+							'max_file_uploads' => 1,
+							'desc'  => __( '<p>Image that is displayed on the Services page.<br>It will not upload if image is bigger than <b>2MB</b>.</p>', 'fgs' ),
+						),
+        ),
+    );
+
     return $meta_boxes;
 }
 
