@@ -116,6 +116,23 @@ add_action( 'widgets_init', 'fgdemo_widgets_init' );
 ============================================= */
 
 
+// function fgs_add_boxes() {
+// 		global $post;
+//
+// 		if ( ! empty( $post ) ) {
+//
+// 				$page_template = get_post_meta($post->ID, '_wp_page_template', true);
+//
+// 				if ($page_template == 'about-page.php') {
+// 						add_meta_box(
+// 								'fgs_about', 'Staff Bio', 'fgs_register_meta_boxes', 'page', 'normal', 'high'
+// 						);
+// 				}
+// 		}
+// }		add_action('add_meta_boxes', 'fgs_add_boxes');
+
+
+
 // custom meta boxes
 add_filter( 'rwmb_meta_boxes', 'fgs_register_meta_boxes' );
 function fgs_register_meta_boxes( $meta_boxes ) {
@@ -125,7 +142,7 @@ function fgs_register_meta_boxes( $meta_boxes ) {
 		// change header image meta box
     $meta_boxes[] = array(
         'title'      => __( 'Change Header Image', 'fgs' ),
-				'id'				 => 'header',
+				'id'				 => "{$prefix}header",
 				'context'    => 'side',
         'post_types' => 'page',
 				'priority'   => 'high',
@@ -167,7 +184,7 @@ function fgs_register_meta_boxes( $meta_boxes ) {
 
 		// staff bio - for about us page
 		$meta_boxes[] = array(
-        'title'      => __( 'Staff Bio', 'fgs' ),
+        'title'      => __( 'Staff Bio' ),
 				'id'         => "{$prefix}about",
         'post_types' => 'page',
 				'autosave'   => true,
@@ -191,10 +208,10 @@ function fgs_register_meta_boxes( $meta_boxes ) {
     );
 
 
-		// change header image meta box
+		// change services image meta box
     $meta_boxes[] = array(
         'title'      => __( 'Services - Image', 'fgs' ),
-				'id'				 => 'services',
+				'id'				 => "{$prefix}services",
         'post_types' => 'page',
 				'priority'   => 'high',
 				'autosave'   => true,
@@ -212,19 +229,6 @@ function fgs_register_meta_boxes( $meta_boxes ) {
     return $meta_boxes;
 }
 
-// 	function add_meta_box() {
-//     global $post;
-//     if(!empty($post)) {
-//         $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
-//
-// 				// check for a template type
-// 				if ($template_file == 'page-templates/about-page.php') {
-// 					add_meta_box('fgs_about', 'Staff Bio', 'fgs_register_meta_boxes', 'page', 'normal', 'high');
-// 				}
-//     }
-// }
-// add_action( 'add_meta_boxes', 'add_meta_box' );
-
 
 // adds custom fixed nav js
 function all_the_js() {
@@ -236,6 +240,9 @@ function all_the_js() {
 
 	wp_register_script('slider', get_template_directory_uri() . '/assets/js/slider.js', array('jquery'),'1.1', true);
 	wp_enqueue_script('slider');
+
+	wp_register_script('metabox', get_template_directory_uri() . '/assets/js/metabox.js', array('jquery'),'1.1', true);
+	wp_enqueue_script('metabox');
 }
 
 add_action( 'init', 'all_the_js' );

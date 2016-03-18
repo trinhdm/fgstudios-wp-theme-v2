@@ -1,5 +1,4 @@
 
-
 $(document).ready(function(){
 
   // changes contact-info div if window is phone/tablet
