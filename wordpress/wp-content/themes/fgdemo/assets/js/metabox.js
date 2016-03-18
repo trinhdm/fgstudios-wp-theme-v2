@@ -28,12 +28,17 @@ $(document).ready(function() {
         $aboutMB = $('#fgs_about'),
         $servicesMB = $('#fgs_services'),
         $headerMB = $('#fgs_header'),
-        $headerposMB = $('#fgs_header-pos');
+        $headerposMB = $('#fgs_header-pos'),
+
+        // page attributes
+        $pageattr = $('#pageparentdiv');
 
     $page_template.change(function() {
       if ($(this).val() == 'page-templates/about-page.php') {
           $aboutMB.show();
           $servicesMB.hide();
+
+          // debug
           console.log ('default value = ' + $('#page_template').val());
         }
         else if ($(this).val() == 'page-templates/services-page.php') {
@@ -41,11 +46,15 @@ $(document).ready(function() {
             $headerMB.hide();
             $headerposMB.hide();
             $servicesMB.show();
+
+            // debug
             console.log ('default value = ' + $('#page_template').val());
           }
           else {
               $aboutMB.hide();
               $servicesMB.hide();
+
+              // debug
               console.log ('default value = ' + $('#page_template').val());
           }
     }).change();
