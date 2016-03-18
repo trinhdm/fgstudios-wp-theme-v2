@@ -122,11 +122,13 @@ function fgs_register_meta_boxes( $meta_boxes ) {
 
 		$prefix = 'fgs_';
 
+		// change header image meta box
     $meta_boxes[] = array(
         'title'      => __( 'Change Header Image', 'textdomain' ),
 				'id'				 => 'header',
 				'context'    => 'side',
         'post_types' => 'page',
+				'priority'   => 'high',
 				'autosave'   => true,
         'fields'     => array(
 						array(
@@ -134,11 +136,36 @@ function fgs_register_meta_boxes( $meta_boxes ) {
 							'id'   => "{$prefix}header-img",
 							'type' => 'image',
 							'max_file_uploads' => 1,
-							'desc'  => __( '<p>Image for the header for this page.</p>', 'fgs' ),
+							'desc'  => __( '<p>Image for the header for this page.<br>It will not upload if image is bigger than <b>2MB</b>.</p>', 'fgs' ),
 						),
         ),
     );
 
+		// change image header position meta box
+		$meta_boxes[] = array(
+        'title'      => __( 'Header Image Position', 'fgs' ),
+				'id'         => "{$prefix}header-pos",
+        'post_types' => 'page',
+				'context'    => 'side',
+				'autosave'   => true,
+				'priority'   => 'high',
+        'fields'     => array(
+            array(
+                'id'   => "{$prefix}header-top",
+                'name' => __( 'Top (px)', 'fgs' ),
+                'type' => 'text',
+								'desc'  => __( '<p>Reposition the background image from the top.<br><b>Put 0px for default.</b><br>Put a negative # to shift image down.</p>', 'fgs' ),
+            ),
+						array(
+                'id'   => "{$prefix}header-left",
+                'name' => __( 'Left (px)', 'fgs' ),
+                'type' => 'text',
+								'desc'  => __( '<p>Reposition the background image from the left.<br><b>Put 0px for default.</b></p>', 'fgs' ),
+            ),
+        ),
+    );
+
+		// staff bio - for about us page
 		$meta_boxes[] = array(
         'title'      => __( 'Staff Bio', 'fgs' ),
 				'id'         => "{$prefix}about",
