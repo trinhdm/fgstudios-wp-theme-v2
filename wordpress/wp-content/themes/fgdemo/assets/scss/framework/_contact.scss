@@ -30,18 +30,12 @@
   }
 
   .btn-primary {
-    background-color: $red;
-    color: $light-gray;
-    font: 10pt $titleFont;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 0px solid transparent;
+    @include button;
     padding: 10px 12px;
     margin-bottom: 50px;
 
     &:hover {
-      background-color: $black;
-      color: $light-gray;
+      @include button-hover;
       @include transition(background-color .5s ease);
     }
   }

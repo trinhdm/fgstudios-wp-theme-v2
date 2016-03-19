@@ -31,8 +31,8 @@
           </header>
 
 
-          <div class="row" style="margin-top: 15px;">
-            <div class="col-md-6 col-md-offset-3">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
 
               <?php the_content(); ?>
 

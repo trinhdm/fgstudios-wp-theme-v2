@@ -10,6 +10,16 @@ for (i = 0; i < images.length; i++) {
     preload[i].src = images[i];
 }
 
+
+
+// $(window).resize(function () { //put your code in window.resize so that it runs when ever window is resized
+//     if ($(window).width() < 991) {
+//       var numThumb = 5;
+//     }
+//   }).resize(); //call resize function
+// }
+
+
 function getNextPosition(id, max) {
     var slot =  images.indexOf($(id).attr("src")) + 1;
     // slot finds the position of the source in the images array and adds 1 to the index
@@ -86,6 +96,14 @@ $('#rightArrow').click(function(){
     setThumb("#thumbnail5", getNextPosition("#thumbnail5", images.length - 2));
     setThumb("#thumbnail6", getNextPosition("#thumbnail6", images.length - 1));
 
+    // $(window).resize(function () { //put your code in window.resize so that it runs when ever window is resized
+    //     if ($(window).width() < 991) {
+    //       removeThumb("#thumbnail5");
+    //       removeThumb("#thumbnail6");
+    //     }
+    //   }).resize(); //call resize function
+    // }
+
     refreshImage();
     // goRight();
 });
@@ -107,6 +125,14 @@ $('#leftArrow') .click(function(){
     setThumb("#thumbnail4", getPreviousPosition("#thumbnail4", 4));
     setThumb("#thumbnail5", getPreviousPosition("#thumbnail5", 5));
     setThumb("#thumbnail6", getPreviousPosition("#thumbnail6", 6));
+
+    // $(window).resize(function () { //put your code in window.resize so that it runs when ever window is resized
+    //     if ($(window).width() < 991) {
+    //       removeThumb("#thumbnail5");
+    //       removeThumb("#thumbnail6");
+    //     }
+    //   }).resize(); //call resize function
+    // }
 
     // will not work if there's less than 3 images
     // you hard coded -1, -2
@@ -132,4 +158,9 @@ function refreshImage() {
 function setThumb(thumbnailID, slot) {
     // whatever selector gets passes through, attach the source attribute that matches the position you're at
     $(thumbnailID).attr('src', images[slot]);
+}
+
+function removeThumb(thumbnailID) {
+    // whatever selector gets passes through, attach the source attribute that matches the position you're at
+    $(thumbnailID).removeAttr('src');
 }

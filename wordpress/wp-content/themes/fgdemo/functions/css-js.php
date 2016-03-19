@@ -8,9 +8,6 @@ function all_the_js() {
 	wp_register_script('tubular-js', get_template_directory_uri() . '/assets/js/tubular.js', 'jquery');
 	wp_enqueue_script('tubular-js');
 
-	wp_register_script('slider', get_template_directory_uri() . '/assets/js/slider.js', array('jquery'),'1.1', true);
-	wp_enqueue_script('slider');
-
 	wp_register_script('metabox', get_template_directory_uri() . '/assets/js/metabox.js', array('jquery'),'1.1', true);
 	wp_enqueue_script('metabox');
 }

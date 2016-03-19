@@ -54,7 +54,6 @@
           </div>
 
           <?php
-
           foreach ( array_slice($img,1) as $image ) {
 
                       echo "<div class='item'>

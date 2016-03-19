@@ -50,6 +50,19 @@ $titleFont: 'Roboto', Verdana, sans-serif;
   transition: $args;
 }
 
+@mixin button {
+  background-color: $red;
+  border: 0px solid transparent;
+  color: $light-gray;
+  font: 10pt $titleFont;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@mixin button-hover {
+  background-color: $black;
+  color: $light-gray;
+}
 
 @mixin header {
   color: #fff;
@@ -58,6 +71,7 @@ $titleFont: 'Roboto', Verdana, sans-serif;
   letter-spacing: 2px;
   @content;
 }
+
 
 @mixin entry-title {
   position: absolute;

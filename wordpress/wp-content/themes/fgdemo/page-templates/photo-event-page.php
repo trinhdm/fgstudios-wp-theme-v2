@@ -7,6 +7,9 @@
 
 
      <?php
+     wp_register_script('slider', get_template_directory_uri() . '/assets/js/slider.js', array('jquery'),'1.1', true);
+ 		 wp_enqueue_script('slider');
+
      add_image_size( 'gallerysize', 1920, 1333 );
      $img = rwmb_meta('fgs_photo-event-gallery', 'type=image&size=gallerysize');
 

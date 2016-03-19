@@ -16,24 +16,64 @@
         <?php the_post_thumbnail(); ?>
       </header>
 
+
       <div class="container" id="photo-event">
 
         <div class="row">
           <div class="col-md-12 text-center">
 
             <?php
-            function event_vid_size() {
-	             return array(
-                  'width' => 950,
-                  'height' => 820
-                );
-              }
-            add_filter( 'embed_defaults', 'event_vid_size' );
+            // function event_vid_size() {
+	          //    return array(
+            //       'width' => 950,
+            //       'height' => 820
+            //     );
+            //   }
+            // add_filter( 'embed_defaults', 'event_vid_size' );
 
             $video = rwmb_meta('fgs_yt-events', 'type=oembed');
             $url = get_post_meta( get_the_ID(), 'fgs_yt-events', true );
                   echo "$video";
              ?>
+
+             <script>
+             var frame = $('iframe');
+
+             $(window).resize(function () { //put your code in window.resize so that it runs when ever window is resized
+                 if ($(window).width() >= 991 && $(window).width() < 1200) {
+                   frame.css('width', '776px');
+                   frame.css('height', '450px');
+                 } else if ($(window).width() >= 1200) {
+                   frame.css('width', '948px');
+                   frame.css('height', '520px');
+                 }
+                  else {
+                   frame.css('width', '100%');
+                 }
+               }).resize(); //call resize function
+
+            //  var frame = $('iframe');
+             //
+            //  if ($(window).width() < 1200) {
+            //    alert('Less than 1200');
+            //    frame.css('width', '100%');
+            //  } else {
+            //    frame.css('width', '950px');
+            //    frame.css('height', '820px');
+            //  }
+
+
+
+
+
+            //  $(window).resize(function () { //put your code in window.resize so that it runs when ever window is resized
+            //      if ($(window).width() < 1200) {
+            //        var frame = $('iframe');
+            //        frame.css("width", '100%');
+            //      }
+            //    }).resize(); //call resize function
+            //  }
+            </script>
 
           </div>
         </div>

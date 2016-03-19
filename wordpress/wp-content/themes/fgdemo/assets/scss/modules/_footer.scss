@@ -121,13 +121,8 @@
   }
 
   .btn-default {
-    background-color: $red;
-    border: 0px solid transparent;
-    color: $light-gray;
-    font: 10pt $titleFont;
-    text-transform: uppercase;
+    @include button;
     padding: 8px 12px;
-    letter-spacing: 1px;
     margin-left: 7px;
 
     @include phone {
@@ -135,8 +130,7 @@
     }
 
     &:hover {
-      background-color: $black;
-      color: $light-gray;
+      @include button-hover;
       @include transition(background-color .5s ease);
     }
   }

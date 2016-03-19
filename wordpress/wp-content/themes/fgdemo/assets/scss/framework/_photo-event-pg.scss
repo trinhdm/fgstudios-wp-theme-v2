@@ -26,6 +26,10 @@
   #mainImage {
     // max-height: 500px;
     max-width: 950px;
+
+    @media (min-width: 991px) and (max-width: 1200px) {
+      max-width: 790px;
+    }
   }
 
   #hold {
@@ -37,19 +41,21 @@
     overflow: hidden;
   }
 
-  #thumbnails {     /* thumbnails width = thumbGallery width + (thumbnailArrows width)*2 */
-    width: 940px;
-    height: 100px;
-    margin: 30px auto;
-  }
-
   #thumbGallery {
     overflow: hidden;
     float: left;
     position: relative;
     text-align: center;
     width: 890px;
-    height: 120px;
+    height: 100px;
+
+    @media (min-width: 991px) and (max-width: 1200px) {
+      width: 740px;
+    }
+
+    @media (max-width: 990px) {
+      width: 640px;
+    }
   }
 
   #imageContain { /* width is dynamically set by js */
@@ -57,19 +63,41 @@
     height: 110px;
     top:0px;
     left:0px;
-  }
 
-  #imageContain img {
-    float: left;
-    width: 100px;
-    height: 100px;
-  }
+    img {
+      float: left;
+      width: 100px;
+      height: 100px;
 
-  #imageContain img:first-child {
-    margin-left: 15px;
+      @media (min-width: 991px) and (max-width: 1200px) {
+        width: 80px;
+        height: 80px;
+      }
+
+      &:first-child {
+        margin-left: 15px;
+
+        @media (min-width: 991px) and (max-width: 1200px) {
+          margin-left: 10px;
+        }
+      }
+    }
   }
 
   #thumbnails {
+    width: 940px;
+    height: 100px;
+    margin: 30px auto;
+
+    @media (min-width: 991px) and (max-width: 1200px) {
+      width: 790px;
+      height: 80px;
+    }
+
+    @media (max-width: 990px) {
+      width: 850px;
+    }
+
     &:hover {
       cursor: pointer;
     }
@@ -80,6 +108,10 @@
       width: 25px;
       top: 50%;
       transform: translateY(-50%);
+
+      @media (max-width: 990px) {
+        width: 40px;
+      }
 
       &:hover {
         cursor: pointer;
