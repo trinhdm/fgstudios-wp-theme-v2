@@ -27,20 +27,7 @@ function fgs_register_meta_boxes( $meta_boxes ) {
 							'max_file_uploads' => 1,
 							'desc'  => __( '<p>Image for the header for this page.<br>Remember to pick the page template!<br>Img will not upload if its bigger than <b>2MB</b>.</p>', 'fgs' ),
 						),
-        ),
-    );
-
-
-		//  1B. HEADER POSITIONING
-		$meta_boxes[] = array(
-        'title'      => __( 'Header Image Position', 'fgs' ),
-				'id'         => "{$prefix}header-pos",
-        'post_types' => 'page',
-				'context'    => 'side',
-				'autosave'   => true,
-				'priority'   => 'high',
-        'fields'     => array(
-            array(
+						array(
                 'id'   => "{$prefix}header-top",
                 'name' => __( 'Top (px)', 'fgs' ),
                 'type' => 'text',
@@ -54,6 +41,75 @@ function fgs_register_meta_boxes( $meta_boxes ) {
             ),
         ),
     );
+
+
+		$meta_boxes[] = array(
+        'title'      => __( 'Home Page Information', 'fgs_' ),
+				'id'				 => "{$prefix}home-info",
+				'context'    => 'normal',
+        'post_types' => 'page',
+				'priority'   => 'high',
+				'autosave'   => true,
+        'fields'     => array(
+						array(
+							'name' => __( 'Area Beneath the Video', 'fgs_' ),
+							'desc' => __( 'The div under the full screen highlight reel.', 'fgs_' ),
+							'id'   => "{$prefix}who-we-are",
+							'type' => 'textarea',
+							'cols' => 20,
+							'rows' => 15,
+						),
+
+						array(
+							'name' => __( '<p>Photo Slider</p>', 'fgs_' ),
+							'id'   => "{$prefix}home-slider",
+							'type' => 'plupload_image',
+							'desc'  => __( '<p>Populates the <b>home page photo slider</b> with images.<br>Upload as many pictures as you want.<br>It will not upload if image is bigger than <b>2MB</b>.</p>', 'fgs' ),
+						),
+
+						array(
+							'name' => __( '<p>Affiliates</p>', 'fgs_' ),
+							'id'   => "{$prefix}aff-logos",
+							'type' => 'plupload_image',
+							'desc'  => __( '<p>Populates the <b>Affiliates</b> section with images.<br>Upload as many pictures as you want.<br>It will not upload if image is bigger than <b>2MB</b>.</p>', 'fgs' ),
+						),
+        ),
+    );
+
+
+		$meta_boxes[] = array(
+				'title'      => __( 'Testimonial' ),
+				'id'         => "{$prefix}testimonial",
+				'post_types' => 'page',
+				'context'    => 'side',
+				'priority'   => 'high',
+				'fields'     => array(
+					array(
+						'name' => __( '<p>Quote</p>', 'fgs_' ),
+						'desc' => __( 'Fills in the testimonial / quote div.', 'fgs_' ),
+						'id'   => "{$prefix}quote",
+						'type' => 'textarea',
+						'cols' => 20,
+						'rows' => 10,
+					),
+					array(
+						'name' => __( '<p>Person\'s Name</p>', 'fgs_' ),
+						'desc' => __( 'Who said the above testimonial?', 'fgs_' ),
+						'id'   => "{$prefix}quote-name",
+						'type' => 'textarea',
+						'cols' => 20,
+						'rows' => 1,
+					),
+					array(
+						'name' => __( '<p>Company\'s Name</p>', 'fgs_' ),
+						'desc' => __( 'Which company do they belong to?', 'fgs_' ),
+						'id'   => "{$prefix}quote-company",
+						'type' => 'textarea',
+						'cols' => 20,
+						'rows' => 1,
+					),
+				),
+		);
 
 
 		// 2A. ABOUT - STAFF BIO
@@ -159,7 +215,7 @@ function fgs_register_meta_boxes( $meta_boxes ) {
 							'id'   => "{$prefix}events-desc",
 							'type' => 'textarea',
 							'cols' => 20,
-							'rows' => 3,
+							'rows' => 6,
 						),
 						array(
 							'name' => __( 'Event Details', 'fgs_' ),
@@ -167,7 +223,7 @@ function fgs_register_meta_boxes( $meta_boxes ) {
 							'id'   => "{$prefix}events-deets",
 							'type' => 'textarea',
 							'cols' => 20,
-							'rows' => 3,
+							'rows' => 6,
 						),
         ),
     );

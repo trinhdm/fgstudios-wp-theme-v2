@@ -27,27 +27,7 @@
 
       <!-- WHO WE ARE -->
       <div class="container text-center" id="whoweare">
-        <h2>Hello! We are Foreground Studios and we specialize in..</h2>
-
-        <div class="row" id="circles">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <i class="fa fa-camera-retro fa-5x circle-icon"></i><br>
-            <p class="script">photography</p>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <i class="fa fa-video-camera fa-5x circle-icon"></i><br>
-            <p class="script">videography</p>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <i class="fa fa-pencil fa-5x circle-icon"></i><br>
-            <p class="script">..and more!</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <p>Bacon ipsum dolor amet alcatra venison short loin tail kielbasa. Turducken bacon pork ham tenderloin. Shank short ribs alcatra, ground round frankfurter shoulder pancetta t-bone chicken pork chuck ribeye shankle. Prosciutto fatback shoulder jerky t-bone beef ribs.
-          </p>
-        </div>
+        <?php echo rwmb_meta('fgs_who-we-are'); ?>
       </div>
 
 
@@ -56,21 +36,32 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
+
+
+           <?php
+              add_image_size( 'slidersize', 1920, 1333 );
+              $img = rwmb_meta('fgs_home-slider', 'type=image&size=slidersize');
+
+              foreach ( $img as $image )
+                      {
+                          $slider[] = "{$image['url']}";
+                      }
+           ?>
+
           <div class="item active">
-            <img src="http://cdn.shopify.com/s/files/1/0551/2693/t/2/assets/slideshow_2.jpg?6811766980172868354" alt="Chania">
+            <img src="<?php $first = array_values($slider)[0];
+                      echo "$first"; ?>">
           </div>
 
-          <div class="item">
-            <img src="http://cdn.shopify.com/s/files/1/0551/2693/t/2/assets/slideshow_3.jpg?6811766980172868354" alt="Chania">
-          </div>
+          <?php
 
-          <div class="item">
-            <img src="http://cdn.shopify.com/s/files/1/0551/2693/t/2/assets/slideshow_4.jpg?6811766980172868354" alt="Flower">
-          </div>
+          foreach ( array_slice($img,1) as $image ) {
 
-          <div class="item">
-            <img src="http://cdn.shopify.com/s/files/1/0551/2693/t/2/assets/slideshow_5.jpg?6811766980172868354" alt="Flower">
-          </div>
+                      echo "<div class='item'>
+                        <img src='{$image['url']}'>
+                      </div>";
+                  }
+           ?>
         </div>
 
         <!-- Left and right controls -->
@@ -158,11 +149,11 @@
       <div class="container quote">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <h3>Working with Foreground Studios has been a total pleasure; they are quick to get on to the tasks at hand and always showed a positive attitude towards new and challenging problems. We'll definitely be working with them for the foreseeable future </h3>
+            <h3><?php echo rwmb_meta('fgs_quote'); ?></h3>
 
             <span>
-              <b>Some guy named George</b></span><br>
-              <p>From some company in Irvine</p>
+              <b><?php echo rwmb_meta('fgs_quote-name'); ?></b></span><br>
+              <p><?php echo rwmb_meta('fgs_quote-company'); ?></p>
 
           </div>
         </div>
@@ -174,6 +165,15 @@
         <div class="row">
           <div class="col-md-4 col-md-offset-4 col-sm-4">
             <h2>Our affiliates</h2>
+
+            <?php
+            add_image_size( 'affsize', 200, 200 );
+            $img = rwmb_meta('fgs_header-img', 'type=image&size=affsize');
+
+            foreach ( $img as $image ) {
+                        echo "<img src='{$image['url']}'>";
+                    }
+             ?>
           </div>
         </div>
       </div>

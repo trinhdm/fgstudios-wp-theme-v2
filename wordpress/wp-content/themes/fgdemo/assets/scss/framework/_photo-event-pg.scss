@@ -19,9 +19,13 @@
     padding-bottom: 10px;
   }
 
+  #details {
+    padding-bottom: 30px;
+  }
+
   #mainImage {
-    max-height: 500px;
-    max-width: 800px;
+    // max-height: 500px;
+    max-width: 950px;
   }
 
   #hold {
@@ -34,9 +38,9 @@
   }
 
   #thumbnails {     /* thumbnails width = thumbGallery width + (thumbnailArrows width)*2 */
-    width: 770px;
+    width: 940px;
     height: 100px;
-    margin: 20px auto;
+    margin: 30px auto;
   }
 
   #thumbGallery {
@@ -44,7 +48,7 @@
     float: left;
     position: relative;
     text-align: center;
-    width: 715px;
+    width: 890px;
     height: 120px;
   }
 
@@ -62,14 +66,14 @@
   }
 
   #imageContain img:first-child {
-    margin-left: 25px;
+    margin-left: 15px;
   }
 
   #thumbnails {
     &:hover {
       cursor: pointer;
     }
-    
+
     .thumbnailArrows {
       float: left;
       position: relative;

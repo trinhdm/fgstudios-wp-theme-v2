@@ -3,11 +3,12 @@ $(document).ready(function() {
 
     var $page_template = $('#page_template'),
 
+        $homeMB = $('#fgs_home-info'),
+        $quoteMB = $('#fgs_testimonial'),
         $aboutMB = $('#fgs_about'),
         $servicesMB = $('#fgs_services'),
 
         $headerMB = $('#fgs_header'),
-        $headerposMB = $('#fgs_header-pos'),
 
         $eventvidMB = $('#fgs_events-video'),
         $eventpicMB = $('#fgs_events-photo'),
@@ -19,6 +20,8 @@ $(document).ready(function() {
 
     $page_template.change(function() {
       if ($(this).val() == 'page-templates/about-page.php') {
+          $homeMB.hide();
+          $quoteMB.hide();
           $aboutMB.show();
           $servicesMB.hide();
 
@@ -29,7 +32,26 @@ $(document).ready(function() {
           // debug
           console.log ('default value = ' + $('#page_template').val());
         }
+        else if ($(this).val() == 'page-templates/home-page.php') {
+            $homeMB.show();
+            $quoteMB.show();
+            $aboutMB.hide();
+            $servicesMB.hide();
+
+            $eventinfoMB.hide();
+            $eventvidMB.hide();
+            $eventpicMB.hide();
+
+            $headerMB.hide();
+
+            $textedit.hide();
+
+            // debug
+            console.log ('default value = ' + $('#page_template').val());
+          }
         else if ($(this).val() == 'page-templates/services-page.php') {
+            $homeMB.hide();
+            $quoteMB.hide();
             $aboutMB.hide();
             $servicesMB.show();
 
@@ -38,17 +60,17 @@ $(document).ready(function() {
             $eventpicMB.hide();
 
             $headerMB.hide();
-            $headerposMB.hide();
 
             // debug
             console.log ('default value = ' + $('#page_template').val());
           }
         else if ($(this).val() == 'page-templates/photo-event-page.php' || $(this).val() == 'page-templates/video-event-page.php') {
+            $homeMB.hide();
+            $quoteMB.hide();
             $aboutMB.hide();
             $servicesMB.hide();
 
             $headerMB.hide();
-            $headerposMB.hide();
 
             $textedit.hide();
 
@@ -68,6 +90,8 @@ $(document).ready(function() {
             console.log ('default value = ' + $('#page_template').val());
             }
           else {
+              $homeMB.hide();
+              $quoteMB.hide();
               $aboutMB.hide();
               $servicesMB.hide();
 
@@ -76,7 +100,6 @@ $(document).ready(function() {
               $eventpicMB.hide();
 
               $headerMB.show();
-              $headerposMB.show();
 
               // debug
               console.log ('default value = ' + $('#page_template').val());

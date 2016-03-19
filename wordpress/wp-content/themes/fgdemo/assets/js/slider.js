@@ -2,7 +2,7 @@
 
 var position = 0;
 
-var numThumb = 5;
+var numThumb = 7;
 
 var preload = [];
 for (i = 0; i < images.length; i++) {
@@ -78,11 +78,13 @@ $('#rightArrow').click(function(){
 
 
     // changes the thumbnails
-    setThumb("#thumbnail0", getNextPosition("#thumbnail0", images.length - 5));
-    setThumb("#thumbnail1", getNextPosition("#thumbnail1", images.length - 4));
-    setThumb("#thumbnail2", getNextPosition("#thumbnail2", images.length - 3));
-    setThumb("#thumbnail3", getNextPosition("#thumbnail3", images.length - 2));
-    setThumb("#thumbnail4", getNextPosition("#thumbnail4", images.length - 1));
+    setThumb("#thumbnail0", getNextPosition("#thumbnail0", images.length - 7));
+    setThumb("#thumbnail1", getNextPosition("#thumbnail1", images.length - 6));
+    setThumb("#thumbnail2", getNextPosition("#thumbnail2", images.length - 5));
+    setThumb("#thumbnail3", getNextPosition("#thumbnail3", images.length - 4));
+    setThumb("#thumbnail4", getNextPosition("#thumbnail4", images.length - 3));
+    setThumb("#thumbnail5", getNextPosition("#thumbnail5", images.length - 2));
+    setThumb("#thumbnail6", getNextPosition("#thumbnail6", images.length - 1));
 
     refreshImage();
     // goRight();
@@ -103,6 +105,8 @@ $('#leftArrow') .click(function(){
     setThumb("#thumbnail2", getPreviousPosition("#thumbnail2", 2));
     setThumb("#thumbnail3", getPreviousPosition("#thumbnail3", 3));
     setThumb("#thumbnail4", getPreviousPosition("#thumbnail4", 4));
+    setThumb("#thumbnail5", getPreviousPosition("#thumbnail5", 5));
+    setThumb("#thumbnail6", getPreviousPosition("#thumbnail6", 6));
 
     // will not work if there's less than 3 images
     // you hard coded -1, -2
