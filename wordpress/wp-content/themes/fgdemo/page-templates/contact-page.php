@@ -50,30 +50,32 @@
 
 
 
-        <div clas="row">
-          <div class="col-md-3 col-md-offset-1 col-sm-12 col-xs-12" id="contact-info">
-
-            <div class="row">
-              <h2>Our info</h2>
-              <i class="fa fa-phone fa-3x"></i><br>
-              <b>Phone</b><br> (xxx)-xxx-xxxx<br><br>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2" id="info">
+            <h2>Our info</h2>
+            <div class="col-sm-1 col-xs-12">
+              <i class="fa fa-phone fa-3x fa-contact"></i>
             </div>
-
-            <div class="row">
-              <i class="fa fa-location-arrow fa-3x"></i><br>
-              <b>Address</b><br>
-              42 Wallaby Way<br>Sydney, Australia<br><br>
+            <div class="col-sm-3 col-xs-12">
+              <b>Phone</b><br> (xxx)-xxx-xxxx
             </div>
-
-            <div class="row">
-              <i class="fa fa-envelope fa-3x"></i><br>
-              <b>Email</b><br> support(at)<br>
-              foregroundusa.com
+            <div class="col-sm-1 col-xs-12">
+              <i class="fa fa-location-arrow fa-3x fa-contact"></i>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <b>Address</b><br>42 Wallaby Way<br>Sydney, Australia
+            </div>
+            <div class="col-sm-1 col-xs-12">
+              <i class="fa fa-envelope fa-3x fa-contact"></i>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <b>Email</b><br> support(at)<br>foregroundusa.com
             </div>
           </div>
+        </div>
 
-
-          <div class="col-md-5" id="note">
+<div clas="row">
+          <div class="col-md-8 col-md-offset-2" id="note">
             <h2>Or drop us a note!</h2>
             <form role="form" method="post" action="">
 
@@ -114,7 +116,7 @@
               </div>
             </div>
 
-          <div class="col-sm-10 col-sm-offset-3">
+          <div class="col-sm-10 col-sm-offset-3" id="sumbit-button">
             <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
           </div>
 
